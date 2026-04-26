@@ -2,38 +2,11 @@
   <section id="home" class="hero">
     <div class="hero__background">
       <div class="hero__overlay"></div>
-      <div class="hero__video-container">
-        <!-- Video background dengan fallback ke gambar -->
-        <video
-          ref="heroVideo"
-          class="hero__bg-video"
-          :poster="videoPoster"
-          autoplay
-          muted
-          loop
-          playsinline
-          preload="metadata"
-          @loadeddata="onVideoLoaded"
-          @error="onVideoError"
-          @canplay="onVideoCanPlay"
-        >
-          <source :src="videoSrc" type="video/mp4" />
-          <!-- Fallback ke gambar jika video tidak didukung -->
-          <img
-            src="/images/hero/sumba-landscape-main.jpg"
-            alt="Landscape Sumba yang menawan"
-            class="hero__bg-image"
-            @error="handleImageError"
-          />
-        </video>
-
-        <!-- Fallback image yang akan ditampilkan jika video gagal load -->
+      <div class="hero__image-container">
         <img
-          v-if="showFallbackImage"
-          src="/images/hero/sumba-landscape-main.jpg"
-          alt="Landscape Sumba yang menawan"
+          :src="heroImage"
+          alt="Galeri Seni Patung Bali"
           class="hero__bg-image"
-          @error="handleImageError"
         />
       </div>
     </div>
@@ -43,16 +16,15 @@
         <ScrollAnimation animation="fadeInUp" :delay="200">
           <div class="hero__text">
             <h1 class="hero__title">
-              <span class="hero__title--main">Pulau Sumba</span>
-              <span class="hero__title--sub">Keindahan Budaya yang Tak Ternilai</span>
+              <span class="hero__title--main">Dimas Art Shop</span>
+              <span class="hero__title--sub">Galeri Seni & Kerajinan Patung Bali</span>
             </h1>
             <p class="hero__description">
-              Temukan keajaiban budaya tradisional, keindahan alam yang memukau, dan warisan leluhur
-              yang masih terjaga di Pulau Sumba. Pengalaman wisata yang tak terlupakan menanti Anda.
+              Pusat kerajinan patung Bali berkualitas dengan nilai seni dan estetika tinggi. Menghadirkan keindahan karya seni ukir untuk dekorasi rumah, villa, hotel, hingga kebutuhan spiritual Anda.
             </p>
             <div class="hero__buttons">
-              <button class="btn btn--primary" @click="scrollToSection('culture')">
-                <span>Jelajahi Budaya</span>
+              <button class="btn btn--primary" @click="scrollToSection('attractions')">
+                <span>Lihat Katalog</span>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                   <path
                     d="M5 12H19M19 12L12 5M19 12L12 19"
@@ -63,8 +35,11 @@
                   />
                 </svg>
               </button>
-              <button class="btn btn--secondary" @click="scrollToSection('gallery')">
-                <span>Lihat Galeri</span>
+              <button class="btn btn--secondary" @click="openWhatsApp">
+                <span>Hubungi Kami</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-left: 0.5rem">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+                </svg>
               </button>
             </div>
           </div>
@@ -74,53 +49,22 @@
           <div class="hero__stats">
             <div class="hero__stat">
               <h3>500+</h3>
-              <p>Tahun Tradisi</p>
+              <p>Karya Terjual</p>
             </div>
             <div class="hero__stat">
               <h3>50+</h3>
-              <p>Desa Adat</p>
+              <p>Pengrajin Lokal</p>
             </div>
             <div class="hero__stat">
               <h3>1000+</h3>
-              <p>Pengunjung Puas</p>
+              <p>Pelanggan Puas</p>
             </div>
           </div>
         </ScrollAnimation>
       </div>
     </div>
 
-    <!-- Video Controls -->
-    <div class="hero__video-controls" v-if="!showFallbackImage">
-      <button
-        class="hero__control-btn"
-        @click="toggleVideoPlay"
-        :title="isVideoPlaying ? 'Pause Video' : 'Play Video'"
-      >
-        <svg v-if="!isVideoPlaying" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M8 5v14l11-7z" />
-        </svg>
-        <svg v-else width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
-        </svg>
-      </button>
 
-      <button
-        class="hero__control-btn"
-        @click="toggleVideoMute"
-        :title="isVideoMuted ? 'Unmute Video' : 'Mute Video'"
-      >
-        <svg v-if="isVideoMuted" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-          <path
-            d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"
-          />
-        </svg>
-        <svg v-else width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-          <path
-            d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"
-          />
-        </svg>
-      </button>
-    </div>
 
     <div class="hero__scroll-indicator">
       <div class="hero__scroll-arrow" @click="scrollToSection('culture')">
@@ -139,72 +83,11 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref } from 'vue'
 import ScrollAnimation from './ScrollAnimation.vue'
 
-// Video configuration
-const videoSrc = ref('/images/hero/sumba-landscape-main.mp4') // Video yang sudah ada
-const videoPoster = ref('/images/hero/sumba-landscape-main.jpg')
-const heroVideo = ref(null)
-const showFallbackImage = ref(false)
-const imageError = ref(false)
-const isVideoPlaying = ref(false)
-const isVideoMuted = ref(true)
-
-// Video control methods
-const toggleVideoPlay = () => {
-  if (heroVideo.value) {
-    if (heroVideo.value.paused) {
-      heroVideo.value.play()
-      isVideoPlaying.value = true
-    } else {
-      heroVideo.value.pause()
-      isVideoPlaying.value = false
-    }
-  }
-}
-
-const toggleVideoMute = () => {
-  if (heroVideo.value) {
-    // Untuk hero video, kita selalu tetap muted
-    // Tombol ini hanya untuk menunjukkan status
-    heroVideo.value.muted = true
-    isVideoMuted.value = true
-    console.log('Video tetap muted untuk pengalaman yang optimal')
-  }
-}
-
-// Video event handlers
-const onVideoLoaded = () => {
-  console.log('Video loaded successfully')
-  showFallbackImage.value = false
-  isVideoPlaying.value = true
-}
-
-const onVideoCanPlay = () => {
-  // Pastikan video selalu muted dan mulai play
-  if (heroVideo.value) {
-    heroVideo.value.muted = true
-    heroVideo.value.play().catch((error) => {
-      console.log('Autoplay prevented:', error)
-      // Jika autoplay diblokir browser, tetap tampilkan video
-      showFallbackImage.value = false
-    })
-  }
-}
-
-const onVideoError = (event) => {
-  console.error('Video failed to load:', event)
-  showFallbackImage.value = true
-  isVideoPlaying.value = false
-}
-
-const handleImageError = (event) => {
-  // Fallback ke gambar online jika gambar lokal tidak ditemukan
-  event.target.src =
-    'https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
-  imageError.value = true
-}
+// Ganti path ke lokasi hero-banner.jpg yang sudah disimpan user
+const heroImage = ref('/images/hero/hero-banner.jpg')
 
 const scrollToSection = (sectionId) => {
   const element = document.getElementById(sectionId)
@@ -213,25 +96,9 @@ const scrollToSection = (sectionId) => {
   }
 }
 
-// Lifecycle hooks
-onMounted(() => {
-  // Pause video when page is not visible (untuk menghemat bandwidth)
-  const handleVisibilityChange = () => {
-    if (heroVideo.value) {
-      if (document.hidden) {
-        heroVideo.value.pause()
-      } else if (!showFallbackImage.value) {
-        heroVideo.value.play()
-      }
-    }
-  }
-
-  document.addEventListener('visibilitychange', handleVisibilityChange)
-})
-
-onUnmounted(() => {
-  document.removeEventListener('visibilitychange', handleVisibilityChange)
-})
+const openWhatsApp = () => {
+  window.open('https://wa.me/6281234567890?text=Halo%20Dimas%20Art%20Shop,%20saya%20ingin%20bertanya%20mengenai%20produk%20patung%20dan%20kerajinan.', '_blank');
+}
 </script>
 
 <style scoped>
@@ -263,28 +130,12 @@ onUnmounted(() => {
   z-index: 2;
 }
 
-.hero__video-container {
+.hero__image-container {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-}
-
-.hero__bg-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  transition: opacity 0.3s ease;
-}
-
-.hero__bg-video:not([poster]) {
-  opacity: 0;
-}
-
-.hero__bg-video[poster] {
-  opacity: 1;
 }
 
 .hero__bg-image {
@@ -328,7 +179,7 @@ onUnmounted(() => {
   font-weight: 800;
   line-height: 1.1;
   margin-bottom: 0.5rem;
-  background: linear-gradient(135deg, #d4af37 0%, #f4e4bc 100%);
+  background: linear-gradient(135deg, #c77d46 0%, #e6b999 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -341,7 +192,7 @@ onUnmounted(() => {
   font-family: 'Oswald', sans-serif;
   font-size: 1.5rem;
   font-weight: 300;
-  color: #f4e4bc;
+  color: #e6b999;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   letter-spacing: 1px;
 }
@@ -380,14 +231,14 @@ onUnmounted(() => {
 }
 
 .btn--primary {
-  background: linear-gradient(135deg, #d4af37 0%, #f4e4bc 100%);
-  color: #333;
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  background: linear-gradient(135deg, #c77d46 0%, #e6b999 100%);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(199, 125, 70, 0.3);
 }
 
 .btn--primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+  box-shadow: 0 6px 20px rgba(199, 125, 70, 0.4);
 }
 
 .btn--secondary {
@@ -421,7 +272,7 @@ onUnmounted(() => {
   font-family: 'Big Shoulders Stencil', cursive;
   font-size: 2.5rem;
   font-weight: 800;
-  color: #d4af37;
+  color: #c77d46;
   margin-bottom: 0.5rem;
   letter-spacing: 1px;
 }

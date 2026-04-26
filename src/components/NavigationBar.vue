@@ -1,10 +1,10 @@
 <template>
   <nav class="navbar" :class="{ 'navbar--scrolled': isScrolled }">
     <div class="navbar__container">
-      <div class="navbar__logo">
+      <div class="navbar__logo" @click="refreshPage">
         <div class="navbar__logo-text">
-          <h2 class="navbar__logo-title">Sumba Culture</h2>
-          <span class="navbar__logo-subtitle">Wisata Budaya</span>
+          <h2 class="navbar__logo-title">Dimas Art Shop</h2>
+          <span class="navbar__logo-subtitle">Galeri Patung Bali</span>
         </div>
       </div>
 
@@ -15,11 +15,11 @@
             <div class="navbar__link-indicator"></div>
           </a>
           <a href="#culture" class="navbar__link" @click="closeMenu">
-            <span class="navbar__link-text">Budaya</span>
+            <span class="navbar__link-text">Seni & Budaya</span>
             <div class="navbar__link-indicator"></div>
           </a>
           <a href="#attractions" class="navbar__link" @click="closeMenu">
-            <span class="navbar__link-text">Destinasi</span>
+            <span class="navbar__link-text">Katalog</span>
             <div class="navbar__link-indicator"></div>
           </a>
           <a href="#gallery" class="navbar__link" @click="closeMenu">
@@ -113,6 +113,10 @@ const scrollToContact = () => {
   }
   closeMenu()
 }
+
+const refreshPage = () => {
+  window.location.reload()
+}
 </script>
 
 <style scoped>
@@ -127,14 +131,14 @@ const scrollToContact = () => {
   -webkit-backdrop-filter: blur(20px);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   padding: 0.75rem 0;
-  border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+  border-bottom: 1px solid rgba(199, 125, 70, 0.1);
 }
 
 .navbar--scrolled {
   background: rgba(255, 255, 255, 0.98);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
   padding: 0.75rem 0;
-  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  border-bottom: 1px solid rgba(199, 125, 70, 0.2);
 }
 
 .navbar__container {
@@ -232,7 +236,7 @@ const scrollToContact = () => {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, #d4af37 0%, #f4e4bc 100%);
+  background: linear-gradient(135deg, #c77d46 0%, #e6b999 100%);
   opacity: 0;
   transition: opacity 0.3s ease;
   border-radius: 12px;
@@ -243,7 +247,7 @@ const scrollToContact = () => {
 }
 
 .navbar__link:hover {
-  color: #d4af37;
+  color: #c77d46;
   transform: translateY(-2px);
 }
 
@@ -259,7 +263,7 @@ const scrollToContact = () => {
   transform: translateX(-50%);
   width: 0;
   height: 3px;
-  background: linear-gradient(135deg, #d4af37 0%, #f4e4bc 100%);
+  background: linear-gradient(135deg, #c77d46 0%, #e6b999 100%);
   border-radius: 2px;
   transition: width 0.3s ease;
 }
@@ -275,8 +279,8 @@ const scrollToContact = () => {
 }
 
 .navbar__cta {
-  background: linear-gradient(135deg, #d4af37 0%, #f4e4bc 100%);
-  color: #333;
+  background: linear-gradient(135deg, #c77d46 0%, #e6b999 100%);
+  color: #fff;
   border: none;
   border-radius: 25px;
   padding: 0.75rem 1.5rem;
@@ -288,7 +292,7 @@ const scrollToContact = () => {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+  box-shadow: 0 4px 12px rgba(199, 125, 70, 0.3);
   position: relative;
   overflow: hidden;
   letter-spacing: 0.5px;
@@ -366,7 +370,7 @@ const scrollToContact = () => {
 
 .navbar__cta:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+  box-shadow: 0 6px 20px rgba(199, 125, 70, 0.4);
 }
 
 .navbar__hamburger {
@@ -394,7 +398,7 @@ const scrollToContact = () => {
 }
 
 .navbar__hamburger:hover {
-  background: rgba(212, 175, 55, 0.1);
+  background: rgba(199, 125, 70, 0.1);
 }
 
 .navbar__hamburger span {
@@ -409,7 +413,7 @@ const scrollToContact = () => {
 
 .navbar__hamburger--active span:nth-child(1) {
   transform: rotate(45deg) translate(6px, 6px);
-  background: #d4af37;
+  background: #c77d46;
 }
 
 .navbar__hamburger--active span:nth-child(2) {
@@ -419,7 +423,7 @@ const scrollToContact = () => {
 
 .navbar__hamburger--active span:nth-child(3) {
   transform: rotate(-45deg) translate(6px, -6px);
-  background: #d4af37;
+  background: #c77d46;
 }
 
 .navbar__overlay {
@@ -489,7 +493,7 @@ const scrollToContact = () => {
   .navbar__mobile-cta {
     margin-top: 2rem;
     padding-top: 1rem;
-    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    border-top: 1px solid rgba(199, 125, 70, 0.2);
     display: block;
   }
 

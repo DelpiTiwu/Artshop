@@ -2,9 +2,18 @@
   <section id="culture" class="culture">
     <div class="culture__container">
       <div class="culture__header">
-        <h2 class="culture__title">Warisan Budaya Sumba</h2>
+        <h2 class="culture__title">Profil & Identitas</h2>
         <p class="culture__subtitle">
-          Menyelami kekayaan tradisi dan budaya yang telah diwariskan turun-temurun
+          Mengenal sejarah, dedikasi, dan filosofi di balik mahakarya Dimas Art Shop
+        </p>
+      </div>
+
+      <div class="culture__history">
+        <p>
+          Berdiri sebagai pusat pelestarian dan pengembangan seni ukir, <strong>Dimas Art Shop</strong> telah mendedikasikan diri untuk menghasilkan mahakarya patung berkualitas tinggi. Berakar pada kekayaan budaya lokal, setiap pahatan tidak hanya mewakili estetika visual, tetapi juga nilai spiritual dan filosofis yang mendalam.
+        </p>
+        <p>
+          Kami percaya bahwa setiap material kayu dan batu memiliki jiwanya sendiri. Tugas kami adalah memunculkan keindahan tersebut ke permukaan dengan ketelitian maestro pengrajin kami, memastikan setiap karya dapat menjadi pilar estetika maupun spiritual di kehidupan pelanggan kami.
         </p>
       </div>
 
@@ -23,7 +32,7 @@
             />
             <div class="culture__card-overlay">
               <button class="culture__card-btn" @click="openModal(item)">
-                <font-awesome-icon icon="play" size="lg" />
+                <font-awesome-icon icon="expand" size="lg" />
               </button>
             </div>
           </div>
@@ -70,69 +79,69 @@ const selectedItem = ref(null)
 
 const cultureItems = ref([
   {
-    title: 'Pasola',
-    description: 'Perang tradisional yang menjadi ritual tahunan untuk memohon berkah',
+    title: 'Patung Dekorasi',
+    description: 'Memperindah sudut rumah atau villa Anda dengan sentuhan artistik',
     fullDescription:
-      'Pasola adalah ritual perang tradisional yang dilakukan setiap tahun di Sumba Barat. Ritual ini melibatkan dua kelompok yang saling melempar tombak kayu sambil menunggang kuda. Pasola bukan hanya pertunjukan, tetapi juga ritual sakral untuk memohon berkah dan kesuburan tanah.',
-    image: '/images/culture/pasola-ritual.jpg',
+      'Kami menyediakan berbagai jenis patung dekorasi untuk mempercantik ruangan, taman, atau villa Anda. Dikerjakan dengan detail yang halus dan menggunakan bahan berkualitas untuk menjamin keawetan dan nilai estetika.',
+    image: '/images/culture/budaya-dekorasi.jpg',
     fallbackImage:
       'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-    tags: ['Ritual', 'Tradisional', 'Kuda'],
+    tags: ['Dekorasi', 'Estetika', 'Villa'],
     featured: true,
   },
   {
-    title: 'Tenun Ikat',
-    description: 'Kain tenun tradisional dengan motif khas yang penuh makna',
+    title: 'Kebutuhan Ibadah',
+    description: 'Patung sakral untuk keperluan pura atau tempat suci lainnya',
     fullDescription:
-      'Tenun ikat Sumba terkenal dengan motif-motif geometris yang memiliki makna filosofis mendalam. Setiap motif menceritakan kisah leluhur, kepercayaan, dan nilai-nilai budaya yang diwariskan turun-temurun. Proses pembuatannya memakan waktu berbulan-bulan.',
-    image: '/images/culture/tenun-ikat.jpg',
+      'Patung-patung yang kami buat tidak hanya sekadar pajangan, tetapi juga memenuhi standar pembuatan patung sakral untuk keperluan peribadatan dan budaya Bali. Setiap pahatan dilakukan dengan doa dan ketelitian.',
+    image: '/images/culture/budaya-ibadah.jpg',
     fallbackImage:
       'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-    tags: ['Kerajinan', 'Motif', 'Tradisional'],
+    tags: ['Sakral', 'Budaya', 'Spiritual'],
     featured: false,
   },
   {
-    title: 'Rumah Adat',
-    description: 'Arsitektur tradisional yang mencerminkan struktur sosial masyarakat',
+    title: 'Pesanan Custom',
+    description: 'Wujudkan desain patung impian Anda bersama pengrajin kami',
     fullDescription:
-      'Rumah adat Sumba memiliki arsitektur yang unik dengan atap menjulang tinggi dan struktur yang mencerminkan hierarki sosial. Setiap bagian rumah memiliki makna khusus dan dibangun dengan teknik tradisional yang telah diwariskan selama berabad-abad.',
-    image: '/images/culture/rumah-adat.jpg',
+      'Anda memiliki desain patung sendiri? Pengrajin kami siap mewujudkannya. Kami melayani pembuatan patung custom sesuai dengan ukuran, bahan, dan detail yang Anda inginkan.',
+    image: '/images/culture/budaya-custom.jpg',
     fallbackImage:
       'https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-    tags: ['Arsitektur', 'Tradisional', 'Budaya'],
+    tags: ['Custom', 'Desain', 'Unik'],
     featured: false,
   },
   {
-    title: 'Tarian Tradisional',
-    description: 'Tarian yang menceritakan kisah dan legenda masyarakat Sumba',
+    title: 'Kualitas Ekspor',
+    description: 'Standar kualitas terbaik yang telah diakui hingga mancanegara',
     fullDescription:
-      'Tarian tradisional Sumba adalah ekspresi budaya yang kaya akan makna. Setiap gerakan memiliki arti khusus dan menceritakan kisah-kisah leluhur, perjuangan, dan nilai-nilai kehidupan yang dipegang teguh oleh masyarakat Sumba.',
-    image: '/images/culture/tarian-tradisional.jpg',
+      'Dimas Art Shop telah melayani pemesanan patung hingga ke luar negeri. Kami menjamin standar kualitas, pengemasan, dan material yang tahan lama untuk dikirim ke berbagai negara.',
+    image: '/images/culture/budaya-ekspor.jpg',
     fallbackImage:
       'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-    tags: ['Tarian', 'Tradisional', 'Kisah'],
+    tags: ['Ekspor', 'Premium', 'Kualitas'],
     featured: false,
   },
   {
-    title: 'Megalitik',
-    description: 'Batu-batu besar yang menjadi saksi peradaban kuno',
+    title: 'Bahan Berkualitas',
+    description: 'Menggunakan kayu dan batu pilihan terbaik',
     fullDescription:
-      'Sumba dikenal dengan situs megalitik yang tersebar di berbagai desa. Batu-batu besar ini bukan hanya peninggalan arkeologis, tetapi juga memiliki makna spiritual dan sosial yang mendalam dalam kehidupan masyarakat Sumba.',
-    image: '/images/culture/megalitik.jpg',
+      'Kami hanya menggunakan material pilihan terbaik seperti kayu jati, kayu suar, batu paras, dan batu padas untuk memastikan setiap karya tahan lama dan memiliki tekstur yang indah.',
+    image: '/images/culture/budaya-bahan.jpg',
     fallbackImage:
       'https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-    tags: ['Sejarah', 'Megalitik', 'Spiritual'],
+    tags: ['Material', 'Kayu', 'Batu'],
     featured: false,
   },
   {
-    title: 'Upacara Adat',
-    description: 'Ritual-ritual sakral yang masih dilestarikan hingga kini',
+    title: 'Detail Ukiran',
+    description: 'Pahatan yang presisi dan penuh karakter',
     fullDescription:
-      'Berbagai upacara adat masih dilaksanakan dengan penuh khidmat di Sumba. Mulai dari upacara kelahiran, pernikahan, hingga kematian, setiap ritual memiliki tata cara dan makna yang mendalam dalam kehidupan masyarakat.',
-    image: '/images/culture/upacara-adat.jpg',
+      'Keunggulan karya Dimas Art Shop terletak pada detail ukiran yang sangat diperhatikan. Setiap lekuk wajah, pakaian, dan ornamen dipahat dengan tingkat ketelitian yang tinggi oleh maestro ukir.',
+    image: '/images/culture/budaya-ukiran.jpg',
     fallbackImage:
       'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-    tags: ['Upacara', 'Sakral', 'Tradisi'],
+    tags: ['Ukiran', 'Presisi', 'Detail'],
     featured: false,
   },
 ])
@@ -187,7 +196,7 @@ const handleImageError = (event, fallbackImage) => {
   transform: translateX(-50%);
   width: 80px;
   height: 4px;
-  background: linear-gradient(135deg, #d4af37 0%, #f4e4bc 100%);
+  background: linear-gradient(135deg, #c77d46 0%, #e6b999 100%);
   border-radius: 2px;
 }
 
@@ -197,6 +206,19 @@ const handleImageError = (event, fallbackImage) => {
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.6;
+}
+
+.culture__history {
+  max-width: 800px;
+  margin: 0 auto 4rem auto;
+  text-align: center;
+  color: #444;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.culture__history p {
+  margin-bottom: 1.5rem;
 }
 
 .culture__grid {
@@ -276,7 +298,7 @@ const handleImageError = (event, fallbackImage) => {
 }
 
 .culture__card-btn {
-  background: rgba(212, 175, 55, 0.9);
+  background: rgba(199, 125, 70, 0.9);
   border: none;
   border-radius: 50%;
   width: 60px;
@@ -290,7 +312,7 @@ const handleImageError = (event, fallbackImage) => {
 }
 
 .culture__card-btn:hover {
-  background: #d4af37;
+  background: #c77d46;
   transform: scale(1.1);
 }
 
@@ -330,8 +352,8 @@ const handleImageError = (event, fallbackImage) => {
 }
 
 .culture__tag {
-  background: linear-gradient(135deg, #d4af37 0%, #f4e4bc 100%);
-  color: #333;
+  background: linear-gradient(135deg, #c77d46 0%, #e6b999 100%);
+  color: #fff;
   padding: 0.4rem 0.9rem;
   border-radius: 20px;
   font-size: 0.85rem;

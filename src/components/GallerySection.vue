@@ -3,9 +3,9 @@
     <div class="gallery__container">
       <ScrollAnimation animation="fadeInUp" :delay="200">
         <div class="gallery__header">
-          <h2 class="gallery__title">Galeri Keindahan Sumba</h2>
+          <h2 class="gallery__title">Galeri Karya Seni Kami</h2>
           <p class="gallery__subtitle">
-            Koleksi foto yang menangkap momen-momen indah dari Pulau Sumba
+            Koleksi foto proses pembuatan dan hasil akhir karya seni patung kami
           </p>
         </div>
       </ScrollAnimation>
@@ -114,132 +114,132 @@ const currentPhotoIndex = ref(0)
 const photosPerPage = 12
 const currentPage = ref(1)
 
-const categories = ['Semua', 'Alam', 'Budaya', 'Pantai', 'Tradisi', 'Arsitektur']
+const categories = ['Semua', 'Proses', 'Patung Kayu', 'Patung Batu', 'Dekorasi', 'Custom']
 
 const allPhotos = ref([
   {
     id: 1,
-    title: 'Sunset di Pantai Walakiri',
-    category: 'Pantai',
-    thumbnail: '/images/gallery/pantai-walakiri.jpg',
-    fullSize: '/images/gallery/pantai-walakiri.jpg',
+    title: 'Detail Ukiran Garuda',
+    category: 'Patung Kayu',
+    thumbnail: '/images/culture/budaya-ekspor.jpg',
+    fullSize: '/images/culture/budaya-ekspor.jpg',
     size: 'medium',
     liked: false,
   },
   {
     id: 2,
-    title: 'Rumah Adat Ratenggaro',
-    category: 'Arsitektur',
-    thumbnail: '/images/gallery/desa-ratenggaro.jpg',
-    fullSize: '/images/gallery/desa-ratenggaro.jpg',
+    title: 'Proses Pemahatan',
+    category: 'Proses',
+    thumbnail: '/images/culture/budaya-bahan.jpg',
+    fullSize: '/images/culture/budaya-bahan.jpg',
     size: 'medium',
     liked: true,
   },
   {
     id: 3,
-    title: 'Tarian Pasola',
-    category: 'Tradisi',
-    thumbnail: '/images/gallery/pasola-ritual.jpg',
-    fullSize: '/images/gallery/pasola-ritual.jpg',
+    title: 'Patung Buddha Zen',
+    category: 'Patung Kayu',
+    thumbnail: '/images/hero/hero-banner.jpg',
+    fullSize: '/images/hero/hero-banner.jpg',
     size: 'medium',
     liked: false,
   },
   {
     id: 4,
-    title: 'Tenun Ikat Tradisional',
-    category: 'Budaya',
-    thumbnail: '/images/gallery/tenun-ikat.jpg',
-    fullSize: '/images/gallery/tenun-ikat.jpg',
+    title: 'Relief Dinding Custom',
+    category: 'Custom',
+    thumbnail: '/images/culture/budaya-dekorasi.jpg',
+    fullSize: '/images/culture/budaya-dekorasi.jpg',
     size: 'small',
     liked: true,
   },
   {
     id: 5,
-    title: 'Kuburan Megalitik',
-    category: 'Budaya',
-    thumbnail: '/images/gallery/megalitik.jpg',
-    fullSize: '/images/gallery/megalitik.jpg',
+    title: 'Patung Ganesha Batu',
+    category: 'Patung Batu',
+    thumbnail: '/images/culture/budaya-ibadah.jpg',
+    fullSize: '/images/culture/budaya-ibadah.jpg',
     size: 'small',
     liked: true,
   },
   {
     id: 6,
-    title: 'Upacara Adat',
-    category: 'Tradisi',
-    thumbnail: '/images/gallery/upacara-adat.jpg',
-    fullSize: '/images/gallery/upacara-adat.jpg',
+    title: 'Pilar Kayu Ukir',
+    category: 'Dekorasi',
+    thumbnail: '/images/culture/budaya-ukiran.jpg',
+    fullSize: '/images/culture/budaya-ukiran.jpg',
     size: 'small',
     liked: false,
   },
   {
     id: 7,
-    title: 'Rumah Adat Sumba',
-    category: 'Arsitektur',
-    thumbnail: '/images/gallery/rumah-adat.jpg',
-    fullSize: '/images/gallery/rumah-adat.jpg',
+    title: 'Loro Blonyo Sepasang',
+    category: 'Dekorasi',
+    thumbnail: '/images/culture/budaya-custom.jpg',
+    fullSize: '/images/culture/budaya-custom.jpg',
     size: 'small',
     liked: false,
   },
   {
     id: 8,
-    title: 'Tarian Tradisional',
-    category: 'Tradisi',
-    thumbnail: '/images/gallery/tarian-tradisional.jpg',
-    fullSize: '/images/gallery/tarian-tradisional.jpg',
+    title: 'Finishing Kayu Jati',
+    category: 'Proses',
+    thumbnail: '/images/culture/budaya-ekspor.jpg',
+    fullSize: '/images/culture/budaya-ekspor.jpg',
     size: 'medium',
     liked: true,
   },
   {
     id: 9,
-    title: 'Air Terjun Lapopu',
-    category: 'Alam',
-    thumbnail: '/images/gallery/air-terjun-lapopu.jpg',
-    fullSize: '/images/gallery/air-terjun-lapopu.jpg',
+    title: 'Patung Dewa Ruci',
+    category: 'Patung Kayu',
+    thumbnail: '/images/hero/hero-banner.jpg',
+    fullSize: '/images/hero/hero-banner.jpg',
     size: 'medium',
     liked: false,
   },
   {
     id: 10,
-    title: 'Bukit Wairinding',
-    category: 'Alam',
-    thumbnail: '/images/gallery/bukit-wairinding.jpg',
-    fullSize: '/images/gallery/bukit-wairinding.jpg',
+    title: 'Patung Saraswati',
+    category: 'Patung Batu',
+    thumbnail: '/images/culture/budaya-bahan.jpg',
+    fullSize: '/images/culture/budaya-bahan.jpg',
     size: 'large',
     liked: true,
   },
   {
     id: 11,
-    title: 'Museum Sumba',
-    category: 'Budaya',
-    thumbnail: '/images/gallery/museum-sumba.jpg',
-    fullSize: '/images/gallery/museum-sumba.jpg',
+    title: 'Proses Desain Relief',
+    category: 'Proses',
+    thumbnail: '/images/culture/budaya-dekorasi.jpg',
+    fullSize: '/images/culture/budaya-dekorasi.jpg',
     size: 'medium',
     liked: false,
   },
   {
     id: 12,
-    title: 'Pantai Puru Kambera',
-    category: 'Pantai',
-    thumbnail: '/images/gallery/pantai-puru-kambera.jpg',
-    fullSize: '/images/gallery/pantai-puru-kambera.jpg',
+    title: 'Patung Macan Kayu',
+    category: 'Custom',
+    thumbnail: '/images/culture/budaya-ibadah.jpg',
+    fullSize: '/images/culture/budaya-ibadah.jpg',
     size: 'medium',
     liked: true,
   },
   {
     id: 13,
-    title: 'Pantai Walakiri',
-    category: 'Pantai',
-    thumbnail: '/images/gallery/pantai_walakiri.jpeg',
-    fullSize: '/images/gallery/pantai_walakiri.jpeg',
+    title: 'Panel Dinding Minimalis',
+    category: 'Dekorasi',
+    thumbnail: '/images/culture/budaya-ukiran.jpg',
+    fullSize: '/images/culture/budaya-ukiran.jpg',
     size: 'large',
     liked: false,
   },
   {
     id: 14,
-    title: 'Bukit Piarakuku',
-    category: 'Alam',
-    thumbnail: '/images/gallery/bukit_piarakuku.jpeg',
-    fullSize: '/images/gallery/bukit_piarakuku.jpeg',
+    title: 'Ganesha Mini Souvenir',
+    category: 'Custom',
+    thumbnail: '/images/culture/budaya-custom.jpg',
+    fullSize: '/images/culture/budaya-custom.jpg',
     size: 'large',
     liked: false,
   },
@@ -360,7 +360,7 @@ onUnmounted(() => {
   transform: translateX(-50%);
   width: 80px;
   height: 4px;
-  background: linear-gradient(135deg, #d4af37 0%, #f4e4bc 100%);
+  background: linear-gradient(135deg, #c77d46 0%, #e6b999 100%);
   border-radius: 2px;
 }
 
@@ -395,13 +395,13 @@ onUnmounted(() => {
 }
 
 .gallery__filter-btn:hover {
-  border-color: #d4af37;
-  color: #d4af37;
+  border-color: #c77d46;
+  color: #c77d46;
 }
 
 .gallery__filter-btn--active {
-  background: linear-gradient(135deg, #d4af37 0%, #f4e4bc 100%);
-  border-color: #d4af37;
+  background: linear-gradient(135deg, #c77d46 0%, #e6b999 100%);
+  border-color: #c77d46;
   color: #333;
 }
 
@@ -494,7 +494,7 @@ onUnmounted(() => {
 
 .gallery__item-category {
   font-size: 0.9rem;
-  color: #d4af37;
+  color: #c77d46;
   font-weight: 600;
 }
 
@@ -532,10 +532,10 @@ onUnmounted(() => {
 }
 
 .gallery__item-btn:hover {
-  background: #d4af37;
+  background: #c77d46;
   color: white;
   transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+  box-shadow: 0 6px 20px rgba(199, 125, 70, 0.4);
 }
 
 /* Font Awesome Icons Styling */
@@ -609,14 +609,14 @@ onUnmounted(() => {
 }
 
 .btn--primary {
-  background: linear-gradient(135deg, #d4af37 0%, #f4e4bc 100%);
+  background: linear-gradient(135deg, #c77d46 0%, #e6b999 100%);
   color: #333;
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  box-shadow: 0 4px 15px rgba(199, 125, 70, 0.3);
 }
 
 .btn--primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+  box-shadow: 0 6px 20px rgba(199, 125, 70, 0.4);
 }
 
 .gallery__lightbox {
@@ -692,7 +692,7 @@ onUnmounted(() => {
 }
 
 .gallery__lightbox-nav:hover {
-  background: rgba(212, 175, 55, 0.8);
+  background: rgba(199, 125, 70, 0.8);
 }
 
 .gallery__lightbox-image {
@@ -734,7 +734,7 @@ onUnmounted(() => {
 }
 
 .gallery__lightbox-category {
-  background: linear-gradient(135deg, #d4af37 0%, #f4e4bc 100%);
+  background: linear-gradient(135deg, #c77d46 0%, #e6b999 100%);
   color: #333;
   padding: 0.4rem 0.9rem;
   border-radius: 20px;

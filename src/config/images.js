@@ -1,4 +1,4 @@
-// 🖼️ Konfigurasi Gambar untuk Landing Page Sumba Culture
+// 🖼️ Konfigurasi Gambar untuk Landing Page Dimas Arshop
 
 export const imageConfig = {
   // Hero Section Images
@@ -8,7 +8,7 @@ export const imageConfig = {
       'https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
   },
 
-  // Culture Section Images
+  // Culture Section Images -> Seni Kerajinan
   culture: {
     pasola: {
       main: '/images/culture/pasola-ritual.jpg',
@@ -42,7 +42,7 @@ export const imageConfig = {
     },
   },
 
-  // Attractions Section Images
+  // Attractions Section Images -> Katalog Produk Patung
   attractions: {
     walakiri: {
       main: '/images/attractions/pantai-walakiri.jpg',

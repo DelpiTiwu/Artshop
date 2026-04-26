@@ -2,9 +2,9 @@
   <section id="testimonials" class="testimonials">
     <div class="testimonials__container">
       <div class="testimonials__header">
-        <h2 class="testimonials__title">Kata Mereka Tentang Sumba</h2>
+        <h2 class="testimonials__title">Testimoni Pelanggan</h2>
         <p class="testimonials__subtitle">
-          Pengalaman dan kesan mendalam dari para wisatawan yang telah mengunjungi Pulau Sumba
+          Pengalaman dan kepuasan pelanggan yang telah mempercayakan karya seni patung mereka kepada kami
         </p>
       </div>
 
@@ -88,7 +88,7 @@
         </div>
         <div class="testimonials__stat">
           <h3>1000+</h3>
-          <p>Wisatawan Puas</p>
+          <p>Pelanggan Puas</p>
         </div>
         <div class="testimonials__stat">
           <h3>98%</h3>
@@ -112,48 +112,48 @@ const testimonials = ref([
     location: 'Melbourne, Australia',
     avatar: '/images/testimonials/avatar-1.jpg',
     rating: 5,
-    text: 'Pengalaman yang tak terlupakan! Budaya Sumba yang autentik dan keindahan alamnya benar-benar memukau. Pasola adalah pertunjukan yang luar biasa, dan keramahan penduduk lokal membuat perjalanan ini semakin berkesan.',
-    tags: ['Budaya Autentik', 'Pasola', 'Keramahan Lokal'],
+    text: 'Sangat puas dengan patung Garuda Wisnu Kencana yang saya pesan. Detail ukirannya sangat halus dan kayunya benar-benar berkualitas tinggi. Menjadi pusat perhatian di ruang tamu saya.',
+    tags: ['Kualitas Tinggi', 'Ukiran Halus', 'Kayu Jati'],
   },
   {
-    name: 'Michael Chen',
-    location: 'Singapore',
+    name: 'Bapak Made Sudana',
+    location: 'Denpasar, Bali',
     avatar: '/images/testimonials/avatar-2.jpg',
     rating: 5,
-    text: 'Sumba adalah surga tersembunyi yang wajib dikunjungi! Pantai Walakiri dengan pohon bakau-nya sangat unik, dan desa adat Ratenggaro memberikan gambaran kehidupan tradisional yang masih terjaga. Highly recommended!',
-    tags: ['Pantai Unik', 'Desa Adat', 'Surga Tersembunyi'],
+    text: 'Pemesanan patung Ganesha untuk pura keluarga kami diselesaikan tepat waktu dengan hasil yang luar biasa sakral. Batu paras yang digunakan sangat bagus dan senimannya sangat paham akan pakem Bali.',
+    tags: ['Sesuai Pakem', 'Tepat Waktu', 'Batu Paras'],
   },
   {
     name: 'Emma Williams',
     location: 'London, UK',
     avatar: '/images/testimonials/avatar-3.jpg',
     rating: 5,
-    text: 'Sebagai fotografer, Sumba memberikan begitu banyak momen indah untuk diabadikan. Dari sunrise di Bukit Wairinding hingga ritual tradisional, setiap sudut memiliki cerita yang menarik. Tenun ikat-nya juga sangat cantik!',
-    tags: ['Fotografi', 'Sunrise', 'Tenun Ikat'],
+    text: 'Memesan relief custom untuk dikirim ke London. Pengemasannya sangat aman, patung sampai tanpa cacat sedikitpun. Kualitas ekspor yang tidak perlu diragukan lagi. Very recommended!',
+    tags: ['Pengiriman Aman', 'Kualitas Ekspor', 'Custom Design'],
   },
   {
-    name: 'David Rodriguez',
-    location: 'Barcelona, Spain',
+    name: 'Ibu Ratna',
+    location: 'Jakarta Selatan',
     avatar: '/images/testimonials/avatar-4.jpg',
     rating: 4,
-    text: 'Perjalanan ke Sumba membuka mata saya tentang kekayaan budaya Indonesia. Arsitektur rumah adat yang unik dan situs megalitik yang misterius membuat saya terpesona. Pasti akan kembali lagi!',
-    tags: ['Arsitektur Unik', 'Megalitik', 'Budaya Indonesia'],
+    text: 'Pilar ukir Bali untuk gazebo halaman belakang rumah sudah terpasang. Hasilnya sangat rapi dan membuat suasana rumah jadi terasa seperti sedang liburan di villa Bali. Terima kasih Dimas Art Shop!',
+    tags: ['Dekorasi Villa', 'Pilar Ukir', 'Sangat Rapi'],
   },
   {
-    name: 'Lisa Anderson',
-    location: 'New York, USA',
+    name: 'Michael Chen',
+    location: 'Singapore',
     avatar: '/images/testimonials/avatar-5.jpg',
     rating: 5,
-    text: 'Sumba memberikan pengalaman wisata yang berbeda dari tempat lain. Kehidupan yang masih tradisional, alam yang masih perawan, dan masyarakat yang sangat ramah. Ini adalah perjalanan yang mengubah perspektif hidup saya.',
-    tags: ['Kehidupan Tradisional', 'Alam Perawan', 'Mengubah Perspektif'],
+    text: 'Patung Buddha meditasi kayu suar yang saya beli sangat memberikan kesan tenang di ruangan yoga saya. Natural finish-nya menonjolkan serat kayu yang sangat indah.',
+    tags: ['Kayu Suar', 'Natural Finish', 'Aura Tenang'],
   },
   {
-    name: 'Ahmed Hassan',
-    location: 'Dubai, UAE',
+    name: 'Desak Ayu',
+    location: 'Ubud, Bali',
     avatar: '/images/testimonials/avatar-6.jpg',
     rating: 5,
-    text: 'Sebagai traveler yang sudah mengunjungi banyak tempat, Sumba tetap menjadi yang terbaik. Air terjun Lapopu yang tersembunyi dan pantai-pantai yang masih alami memberikan kedamaian yang sulit ditemukan di tempat lain.',
-    tags: ['Air Terjun', 'Pantai Alami', 'Kedamaian'],
+    text: 'Sudah berlangganan bertahun-tahun dengan Dimas Art Shop untuk mengisi dekorasi villa kami di Ubud. Konsistensi kualitas dan pelayanan yang ramah membuat kami selalu kembali.',
+    tags: ['Langganan Villa', 'Kualitas Konsisten', 'Pelayanan Ramah'],
   },
 ])
 
@@ -256,7 +256,7 @@ const handleAvatarError = (event) => {
   transform: translateX(-50%);
   width: 80px;
   height: 4px;
-  background: linear-gradient(135deg, #d4af37 0%, #f4e4bc 100%);
+  background: linear-gradient(135deg, #c77d46 0%, #e6b999 100%);
   border-radius: 2px;
 }
 
@@ -301,7 +301,7 @@ const handleAvatarError = (event) => {
   top: -10px;
   left: 30px;
   font-size: 6rem;
-  color: #d4af37;
+  color: #c77d46;
   font-family: serif;
   line-height: 1;
 }
@@ -318,7 +318,7 @@ const handleAvatarError = (event) => {
   height: 80px;
   border-radius: 50%;
   overflow: hidden;
-  border: 4px solid #d4af37;
+  border: 4px solid #c77d46;
   flex-shrink: 0;
 }
 
@@ -358,7 +358,7 @@ const handleAvatarError = (event) => {
 }
 
 .testimonials__star--filled {
-  color: #d4af37;
+  color: #c77d46;
 }
 
 .testimonials__star:not(.testimonials__star--filled) {
@@ -384,7 +384,7 @@ const handleAvatarError = (event) => {
 }
 
 .testimonials__tag {
-  background: linear-gradient(135deg, #d4af37 0%, #f4e4bc 100%);
+  background: linear-gradient(135deg, #c77d46 0%, #e6b999 100%);
   color: #2c3e50;
   padding: 0.5rem 1rem;
   border-radius: 20px;
@@ -401,7 +401,7 @@ const handleAvatarError = (event) => {
 }
 
 .testimonials__btn {
-  background: linear-gradient(135deg, #d4af37 0%, #f4e4bc 100%);
+  background: linear-gradient(135deg, #c77d46 0%, #e6b999 100%);
   border: none;
   border-radius: 50%;
   width: 50px;
@@ -412,7 +412,7 @@ const handleAvatarError = (event) => {
   color: #2c3e50;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  box-shadow: 0 4px 15px rgba(199, 125, 70, 0.3);
 }
 
 .testimonials__btn .fa-icon {
@@ -422,7 +422,7 @@ const handleAvatarError = (event) => {
 
 .testimonials__btn:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+  box-shadow: 0 6px 20px rgba(199, 125, 70, 0.4);
 }
 
 .testimonials__btn:hover:not(:disabled) .fa-icon {
@@ -450,7 +450,7 @@ const handleAvatarError = (event) => {
 }
 
 .testimonials__dot--active {
-  background: linear-gradient(135deg, #d4af37 0%, #f4e4bc 100%);
+  background: linear-gradient(135deg, #c77d46 0%, #e6b999 100%);
   transform: scale(1.2);
 }
 
@@ -472,7 +472,7 @@ const handleAvatarError = (event) => {
   font-family: 'Big Shoulders Stencil', cursive;
   font-size: 3rem;
   font-weight: 800;
-  color: #d4af37;
+  color: #c77d46;
   margin-bottom: 0.5rem;
   letter-spacing: 1px;
 }

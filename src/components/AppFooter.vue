@@ -4,8 +4,8 @@
       <div class="footer__content">
         <div class="footer__section footer__section--main">
           <div class="footer__logo">
-            <h3>Sumba Culture</h3>
-            <p>Menjaga dan mempromosikan kekayaan budaya Pulau Sumba untuk generasi mendatang</p>
+            <h3>Dimas Art Shop</h3>
+            <p>Pusat kerajinan patung Bali berkualitas dengan nilai seni dan estetika tinggi untuk kebutuhan dekorasi dan spiritual.</p>
           </div>
           <div class="footer__social">
             <h4>Ikuti Kami</h4>
@@ -35,24 +35,24 @@
         </div>
 
         <div class="footer__section">
-          <h4>Destinasi</h4>
+          <h4>Katalog Utama</h4>
           <ul class="footer__links">
-            <li><a href="#attractions">Pantai Walakiri</a></li>
-            <li><a href="#attractions">Desa Adat Ratenggaro</a></li>
-            <li><a href="#attractions">Air Terjun Lapopu</a></li>
-            <li><a href="#attractions">Bukit Wairinding</a></li>
-            <li><a href="#attractions">Pantai Puru Kambera</a></li>
+            <li><a href="#attractions">Patung Dekorasi</a></li>
+            <li><a href="#attractions">Kebutuhan Ibadah</a></li>
+            <li><a href="#attractions">Relief Dinding</a></li>
+            <li><a href="#attractions">Patung Custom</a></li>
+            <li><a href="#attractions">Pilar Ukir</a></li>
           </ul>
         </div>
 
         <div class="footer__section">
-          <h4>Budaya</h4>
+          <h4>Material & Proses</h4>
           <ul class="footer__links">
-            <li><a href="#culture">Ritual Pasola</a></li>
-            <li><a href="#culture">Tenun Ikat</a></li>
-            <li><a href="#culture">Rumah Adat</a></li>
-            <li><a href="#culture">Tarian Tradisional</a></li>
-            <li><a href="#culture">Upacara Adat</a></li>
+            <li><a href="#culture">Kayu Jati Perhutani</a></li>
+            <li><a href="#culture">Kayu Suar / Meh</a></li>
+            <li><a href="#culture">Batu Paras Taro</a></li>
+            <li><a href="#culture">Natural Finish</a></li>
+            <li><a href="#culture">Prada Emas</a></li>
           </ul>
         </div>
 
@@ -70,7 +70,7 @@
 
       <div class="footer__bottom">
         <div class="footer__bottom-content">
-          <p>&copy; 2025 Sumba Culture. Semua hak dilindungi undang-undang.</p>
+          <p>&copy; 2026 Dimas Art Shop. Semua hak dilindungi undang-undang.</p>
           <div class="footer__bottom-links">
             <a href="#">Kebijakan Privasi</a>
             <a href="#">Syarat & Ketentuan</a>
@@ -113,7 +113,7 @@
 .footer__logo h3 {
   font-size: 2rem;
   font-weight: 800;
-  color: #d4af37;
+  color: #c77d46;
   margin-bottom: 1rem;
 }
 
@@ -138,7 +138,7 @@
   left: 0;
   width: 30px;
   height: 2px;
-  background: #d4af37;
+  background: #c77d46;
 }
 
 .footer__links {
@@ -159,7 +159,7 @@
 }
 
 .footer__links a:hover {
-  color: #d4af37;
+  color: #c77d46;
 }
 
 .footer__social h4 {
@@ -185,7 +185,7 @@
 }
 
 .footer__social-link:hover {
-  background: #d4af37;
+  background: #c77d46;
   color: white;
   transform: translateY(-2px);
 }
@@ -222,7 +222,7 @@
 }
 
 .footer__bottom-links a:hover {
-  color: #d4af37;
+  color: #c77d46;
 }
 
 @media (max-width: 768px) {

@@ -7,8 +7,8 @@
   font-weight: 400;
 
   /* Color Variables */
-  --color-primary: #d4af37;
-  --color-primary-light: #f4e4bc;
+  --color-primary: #c77d46;
+  --color-primary-light: #e6b999;
   --color-secondary: #333;
   --color-text: #333;
   --color-text-light: #666;
@@ -154,7 +154,7 @@ input, select, textarea {
 input:focus, select:focus, textarea:focus {
   outline: none;
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+  box-shadow: 0 0 0 3px rgba(199, 125, 70, 0.1);
 }
 
 /* Utility Classes */

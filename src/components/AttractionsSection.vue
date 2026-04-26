@@ -3,9 +3,9 @@
     <div class="attractions__container">
       <ScrollAnimation animation="fadeInUp" :delay="200">
         <div class="attractions__header">
-          <h2 class="attractions__title">Destinasi Wisata Unggulan</h2>
+          <h2 class="attractions__title">Katalog Produk</h2>
           <p class="attractions__subtitle">
-            Temukan keindahan alam dan keunikan budaya di setiap sudut Pulau Sumba
+            Pilihan patung dan karya seni ukir terbaik beserta spesifikasi dan harganya
           </p>
         </div>
       </ScrollAnimation>
@@ -44,8 +44,12 @@
           <div class="attractions__card-content">
             <h3 class="attractions__card-name">{{ attraction.name }}</h3>
             <p class="attractions__card-location">
-              <font-awesome-icon icon="map-marker-alt" />
-              {{ attraction.location }}
+              <font-awesome-icon icon="layer-group" />
+              Material: {{ attraction.material }}
+            </p>
+            <p class="attractions__card-price">
+              <font-awesome-icon icon="tag" />
+              {{ attraction.price }}
             </p>
             <p class="attractions__card-description">{{ attraction.description }}</p>
             <div class="attractions__card-features">
@@ -81,8 +85,12 @@
               </div>
             </div>
             <p class="attractions__modal-location">
-              <font-awesome-icon icon="map-marker-alt" />
-              {{ selectedAttraction.location }}
+              <font-awesome-icon icon="layer-group" />
+              Material: {{ selectedAttraction.material }}
+            </p>
+            <p class="attractions__modal-price" style="color: #c77d46; font-weight: 700; margin-bottom: 1.5rem; font-size: 1.2rem;">
+              <font-awesome-icon icon="tag" />
+              {{ selectedAttraction.price }}
             </p>
             <p class="attractions__modal-description">{{ selectedAttraction.fullDescription }}</p>
             <div class="attractions__modal-features">
@@ -99,8 +107,8 @@
             </div>
             <div class="attractions__modal-actions">
               <button class="btn btn--primary" @click="bookNow(selectedAttraction)">
-                <span>Pesan Sekarang</span>
-                <font-awesome-icon icon="arrow-right" />
+                <span>Pesan via WhatsApp</span>
+                <font-awesome-icon :icon="['fab', 'whatsapp']" />
               </button>
               <button class="btn btn--secondary" @click="shareAttraction(selectedAttraction)">
                 <span>Bagikan</span>
@@ -120,80 +128,80 @@ import ScrollAnimation from './ScrollAnimation.vue'
 const activeCategory = ref('Semua')
 const selectedAttraction = ref(null)
 
-const categories = ['Semua', 'Alam', 'Budaya', 'Pantai', 'Sejarah']
+const categories = ['Semua', 'Kayu', 'Batu', 'Dekorasi', 'Spiritual']
 
 const attractions = ref([
   {
     id: 1,
-    name: 'Pantai Walakiri',
-    location: 'Sumba Timur',
-    category: 'Pantai',
-    rating: 4.8,
-    image: '/images/attractions/pantai-walakiri.jpg',
-    description: 'Pantai dengan pohon bakau yang unik dan sunset yang memukau',
-    fullDescription:
-      'Pantai Walakiri terkenal dengan pohon bakau yang tumbuh di tengah laut, menciptakan pemandangan yang sangat unik. Saat air surut, Anda bisa berjalan di antara pohon-pohon bakau ini sambil menikmati sunset yang spektakuler. Pantai ini juga menjadi habitat berbagai jenis burung dan biota laut.',
-    features: ['Sunset View', 'Mangrove Forest', 'Bird Watching', 'Photography Spot'],
+    name: 'Patung Kayu Tinggi (Etnik)',
+    material: 'Kayu Jati',
+    price: 'Rp 4.500.000',
+    category: 'Kayu',
+    rating: 5.0,
+    image: '/images/culture/budaya-ekspor.jpg',
+    description: 'Sepasang patung kayu etnik tradisional dengan tinggi memukau',
+    fullDescription: 'Dua patung kayu pria dengan tinggi mencolok memakai tutup kepala tradisional. Diukir dengan gaya etnik yang sangat kental, sangat cocok untuk ditempatkan sebagai penjaga pintu masuk atau pilar dekorasi di ruangan bernuansa tradisional.',
+    features: ['Kayu Berkualitas', 'Gaya Etnik Primitif', 'Ukuran Besar', 'Sepasang'],
   },
   {
     id: 2,
-    name: 'Desa Adat Ratenggaro',
-    location: 'Sumba Barat Daya',
-    category: 'Budaya',
+    name: 'Patung Wanita Tradisional',
+    material: 'Kayu Suar',
+    price: 'Rp 2.800.000',
+    category: 'Kayu',
     rating: 4.9,
-    image: '/images/attractions/desa-ratenggaro.jpg',
-    description: 'Desa tradisional dengan rumah adat dan budaya yang masih terjaga',
-    fullDescription:
-      'Desa Ratenggaro adalah salah satu desa adat terbaik di Sumba yang masih mempertahankan arsitektur tradisional dan budaya asli. Di sini Anda bisa melihat rumah-rumah adat dengan atap menjulang tinggi, kuburan megalitik, dan menyaksikan kehidupan sehari-hari masyarakat yang masih memegang teguh tradisi leluhur.',
-    features: ['Traditional Houses', 'Megalithic Tombs', 'Cultural Experience', 'Local Crafts'],
+    image: '/images/culture/budaya-ibadah.jpg',
+    description: 'Patung kayu figur wanita duduk dengan karakter mata yang tajam',
+    fullDescription: 'Patung figur wanita sedang duduk dengan proporsi dan gaya ukiran khas yang menonjolkan ekspresi wajah yang kuat dan mata yang besar. Karya seni ini memancarkan aura magis khas kesenian lokal.',
+    features: ['Pahatan Karakter', 'Finishing Natural', 'Gaya Klasik', 'Koleksi Unik'],
   },
   {
     id: 3,
-    name: 'Air Terjun Lapopu',
-    location: 'Sumba Tengah',
-    category: 'Alam',
-    rating: 4.7,
-    image: '/images/attractions/air-terjun-lapopu.jpg',
-    description: 'Air terjun tersembunyi di tengah hutan yang masih perawan',
-    fullDescription:
-      'Air Terjun Lapopu adalah air terjun yang tersembunyi di tengah hutan Sumba Tengah. Untuk mencapainya, Anda harus trekking melalui hutan yang masih perawan selama sekitar 2 jam. Air terjun ini memiliki ketinggian sekitar 50 meter dan dikelilingi oleh vegetasi tropis yang lebat.',
-    features: ['Trekking', 'Swimming', 'Nature Photography', 'Forest Adventure'],
+    name: 'Koleksi Topeng & Buddha',
+    material: 'Kayu Mahoni',
+    price: 'Mulai Rp 500.000',
+    category: 'Spiritual',
+    rating: 4.8,
+    image: '/images/culture/budaya-dekorasi.jpg',
+    description: 'Beragam koleksi dari topeng lukis warna-warni hingga patung Buddha',
+    fullDescription: 'Koleksi campuran yang terdiri dari topeng-topeng dengan lukisan tangan yang sangat mendetail dan berwarna cerah, serta patung Buddha meditasi kayu berwarna gelap yang menghadirkan nuansa spiritual yang tenang.',
+    features: ['Lukisan Tangan', 'Warna Cerah', 'Beragam Ukuran', 'Nuansa Tenang'],
   },
   {
     id: 4,
-    name: 'Bukit Wairinding',
-    location: 'Sumba Timur',
-    category: 'Alam',
-    rating: 4.6,
-    image: '/images/attractions/bukit-wairinding.jpg',
-    description: 'Bukit dengan pemandangan 360 derajat yang menakjubkan',
-    fullDescription:
-      'Bukit Wairinding menawarkan pemandangan 360 derajat yang menakjubkan dari ketinggian. Dari sini Anda bisa melihat hamparan sawah, pantai, dan lautan yang membentang luas. Tempat ini sangat populer untuk menikmati sunrise dan sunset dengan pemandangan yang spektakuler.',
-    features: ['Panoramic View', 'Sunrise/Sunset', 'Photography', 'Hiking'],
+    name: 'Alat & Ukiran Tulang',
+    material: 'Tulang Sapi / Tanduk',
+    price: 'Rp 1.500.000',
+    category: 'Dekorasi',
+    rating: 4.9,
+    image: '/images/culture/budaya-ukiran.jpg',
+    description: 'Koleksi alat ukir dan objek dekorasi dari tulang dengan ukiran super detail',
+    fullDescription: 'Koleksi eksklusif objek pahatan berbentuk alat berburu atau pelindung, terbuat dari bahan tulang atau tanduk dengan ukiran geometri dan figur yang sangat presisi dan detail.',
+    features: ['Bahan Eksklusif', 'Ukiran Mikro Presisi', 'Unik & Langka', 'Pajangan Meja'],
   },
   {
     id: 5,
-    name: 'Museum Sumba',
-    location: 'Waingapu',
-    category: 'Sejarah',
-    rating: 4.5,
-    image: '/images/attractions/museum-sumba.jpg',
-    description: 'Museum yang menyimpan koleksi artefak dan sejarah Sumba',
-    fullDescription:
-      'Museum Sumba di Waingapu menyimpan koleksi lengkap artefak, tenun tradisional, dan benda-benda bersejarah dari berbagai daerah di Sumba. Museum ini memberikan gambaran komprehensif tentang sejarah, budaya, dan peradaban Sumba dari masa lampau hingga sekarang.',
-    features: ['Historical Artifacts', 'Traditional Textiles', 'Cultural Education', 'Guided Tour'],
+    name: 'Pahatan Wajah Primitif',
+    material: 'Kayu Trembesi',
+    price: 'Rp 1.200.000',
+    category: 'Budaya',
+    rating: 4.7,
+    image: '/images/culture/budaya-bahan.jpg',
+    description: 'Patung wajah bergaya primitif minimalis dengan nilai estetika tinggi',
+    fullDescription: 'Wajah kayu yang dipahat dengan tarikan garis tegak lurus dan sangat minimalis. Membawa kembali gaya seni masa lampau yang sangat kuat, sangat cocok untuk dekorasi interior modern yang membutuhkan sentuhan rustic.',
+    features: ['Gaya Primitif', 'Minimalis', 'Kayu Tua', 'Rustic Decor'],
   },
   {
     id: 6,
-    name: 'Pantai Puru Kambera',
-    location: 'Sumba Timur',
-    category: 'Pantai',
+    name: 'Berbagai Koleksi Galeri',
+    material: 'Campuran Kayu & Batu',
+    price: 'Hubungi Kami',
+    category: 'Dekorasi',
     rating: 4.8,
-    image: '/images/attractions/pantai-puru-kambera.jpg',
-    description: 'Pantai dengan bukit pasir yang unik dan ombak yang sempurna',
-    fullDescription:
-      'Pantai Puru Kambera terkenal dengan bukit-bukit pasir yang unik dan ombak yang sempurna untuk surfing. Pantai ini memiliki pemandangan yang sangat indah dengan kontras antara pasir putih, laut biru, dan bukit-bukit pasir yang membentuk formasi unik.',
-    features: ['Sand Dunes', 'Surfing', 'Beach Activities', 'Unique Landscape'],
+    image: '/images/culture/budaya-custom.jpg',
+    description: 'Tampilan berbagai macam koleksi luar biasa yang ada di galeri kami',
+    fullDescription: 'Galeri kami menampung ribuan karya seni dari berbagai pengrajin. Mulai dari patung seukuran manusia, topeng dekorasi dinding, hingga ornamen-ornamen kecil yang siap mempercantik bangunan Anda.',
+    features: ['Pilihan Terlengkap', 'Berbagai Ukuran', 'Harga Terbaik', 'Kualitas Terjamin'],
   },
 ])
 
@@ -219,11 +227,8 @@ const closeModal = () => {
 }
 
 const bookNow = (attraction) => {
-  window.dispatchEvent(
-    new CustomEvent('app-alert', {
-      detail: { color: 'info', text: `Booking untuk ${attraction.name} akan segera tersedia!` },
-    }),
-  )
+  const message = `Halo Dimas Art Shop, saya tertarik dengan produk ${attraction.name} (${attraction.material}) dengan harga ${attraction.price}. Mohon informasi lebih lanjut.`;
+  window.open(`https://wa.me/6281234567890?text=${encodeURIComponent(message)}`, '_blank');
 }
 
 const shareAttraction = (attraction) => {
@@ -280,7 +285,7 @@ const shareAttraction = (attraction) => {
   transform: translateX(-50%);
   width: 80px;
   height: 4px;
-  background: linear-gradient(135deg, #d4af37 0%, #f4e4bc 100%);
+  background: linear-gradient(135deg, #c77d46 0%, #e6b999 100%);
   border-radius: 2px;
 }
 
@@ -315,13 +320,13 @@ const shareAttraction = (attraction) => {
 }
 
 .attractions__filter-btn:hover {
-  border-color: #d4af37;
-  color: #d4af37;
+  border-color: #c77d46;
+  color: #c77d46;
 }
 
 .attractions__filter-btn--active {
-  background: linear-gradient(135deg, #d4af37 0%, #f4e4bc 100%);
-  border-color: #d4af37;
+  background: linear-gradient(135deg, #c77d46 0%, #e6b999 100%);
+  border-color: #c77d46;
   color: #333;
 }
 
@@ -384,7 +389,7 @@ const shareAttraction = (attraction) => {
 }
 
 .attractions__card-category {
-  background: linear-gradient(135deg, #d4af37 0%, #f4e4bc 100%);
+  background: linear-gradient(135deg, #c77d46 0%, #e6b999 100%);
   color: #333;
   padding: 0.3rem 0.8rem;
   border-radius: 15px;
@@ -406,12 +411,18 @@ const shareAttraction = (attraction) => {
   letter-spacing: 0.5px;
 }
 
-.attractions__card-location {
+.attractions__card-location,
+.attractions__card-price {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   color: #666;
   font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+.attractions__card-price {
+  font-weight: 600;
+  color: #c77d46;
   margin-bottom: 1rem;
 }
 
@@ -531,7 +542,7 @@ const shareAttraction = (attraction) => {
   background: #f8f9fa;
   padding: 0.6rem 1.2rem;
   border-radius: 25px;
-  color: #d4af37;
+  color: #c77d46;
   font-weight: 600;
   font-size: 0.9rem;
   flex-shrink: 0;
@@ -570,7 +581,7 @@ const shareAttraction = (attraction) => {
 }
 
 .attractions__modal-feature {
-  background: linear-gradient(135deg, #d4af37 0%, #f4e4bc 100%);
+  background: linear-gradient(135deg, #c77d46 0%, #e6b999 100%);
   color: #333;
   padding: 0.6rem 1rem;
   border-radius: 20px;
@@ -607,14 +618,14 @@ const shareAttraction = (attraction) => {
 }
 
 .btn--primary {
-  background: linear-gradient(135deg, #d4af37 0%, #f4e4bc 100%);
+  background: linear-gradient(135deg, #c77d46 0%, #e6b999 100%);
   color: #333;
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  box-shadow: 0 4px 15px rgba(199, 125, 70, 0.3);
 }
 
 .btn--primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+  box-shadow: 0 6px 20px rgba(199, 125, 70, 0.4);
 }
 
 .btn--secondary {
@@ -625,8 +636,8 @@ const shareAttraction = (attraction) => {
 
 .btn--secondary:hover {
   background: #f8f9fa;
-  border-color: #d4af37;
-  color: #d4af37;
+  border-color: #c77d46;
+  color: #c77d46;
 }
 
 @media (max-width: 768px) {
