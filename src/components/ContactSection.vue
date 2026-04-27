@@ -69,7 +69,7 @@
               </svg>
             </div>
             <h3>Hubungi Kami</h3>
-            <p>0812-3456-7890<br />info@dimasartshop.com<br />order@dimasartshop.com</p>
+            <p>Bapak Umbu Palla<br />+62 812-3720-5762<br />info@dimasartshop.com<br />order@dimasartshop.com</p>
           </div>
         </div>
 
@@ -146,7 +146,7 @@ const submitForm = () => {
   isSubmitting.value = true
   
   const textMessage = `Halo Dimas Art Shop, perkenalkan saya ${form.value.name}.\n\nTopik: ${form.value.package}\n\nPesan: ${form.value.message}`;
-  const whatsappUrl = `https://wa.me/6281234567890?text=${encodeURIComponent(textMessage)}`;
+  const whatsappUrl = `https://wa.me/6281237205762?text=${encodeURIComponent(textMessage)}`;
   
   // Membuka tab WhatsApp baru
   window.open(whatsappUrl, '_blank');

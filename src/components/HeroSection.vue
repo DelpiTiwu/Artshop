@@ -97,7 +97,7 @@ const scrollToSection = (sectionId) => {
 }
 
 const openWhatsApp = () => {
-  window.open('https://wa.me/6281234567890?text=Halo%20Dimas%20Art%20Shop,%20saya%20ingin%20bertanya%20mengenai%20produk%20patung%20dan%20kerajinan.', '_blank');
+  window.open('https://wa.me/6281237205762?text=Halo%20Dimas%20Art%20Shop,%20saya%20ingin%20bertanya%20mengenai%20produk%20patung%20dan%20kerajinan.', '_blank');
 }
 </script>
 

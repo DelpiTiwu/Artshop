@@ -228,7 +228,7 @@ const closeModal = () => {
 
 const bookNow = (attraction) => {
   const message = `Halo Dimas Art Shop, saya tertarik dengan produk ${attraction.name} (${attraction.material}) dengan harga ${attraction.price}. Mohon informasi lebih lanjut.`;
-  window.open(`https://wa.me/6281234567890?text=${encodeURIComponent(message)}`, '_blank');
+  window.open(`https://wa.me/6281237205762?text=${encodeURIComponent(message)}`, '_blank');
 }
 
 const shareAttraction = (attraction) => {
