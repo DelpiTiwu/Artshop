@@ -38,7 +38,9 @@
           </div>
           <div class="culture__card-content">
             <h3 class="culture__card-title">{{ item.title }}</h3>
-            <p class="culture__card-description">{{ item.description }}</p>
+            <p class="culture__card-description">
+              {{ item.featured ? item.fullDescription : item.description }}
+            </p>
             <div class="culture__card-tags">
               <span v-for="tag in item.tags" :key="tag" class="culture__tag">
                 {{ tag }}
@@ -325,6 +327,11 @@ const handleImageError = (event, fallbackImage) => {
   min-height: 160px;
 }
 
+.culture__card--featured .culture__card-content {
+  padding: 2.5rem;
+  justify-content: center;
+}
+
 .culture__card-title {
   font-family: 'Oswald', sans-serif;
   font-size: 1.4rem;
@@ -342,6 +349,12 @@ const handleImageError = (event, fallbackImage) => {
   flex: 1;
   display: flex;
   align-items: flex-start;
+}
+
+.culture__card--featured .culture__card-description {
+  flex: 0 1 auto;
+  margin-bottom: 2rem;
+  font-size: 1.05rem;
 }
 
 .culture__card-tags {
